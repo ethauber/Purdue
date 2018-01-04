@@ -1,0 +1,7 @@
+1: LOGIN admin pass
+Login successful
+
+2: LOGIN admin pass
+Login successful
+
+3: QUIT

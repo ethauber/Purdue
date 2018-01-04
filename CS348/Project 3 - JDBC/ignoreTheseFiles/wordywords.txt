@@ -1,0 +1,4 @@
+here are some words all seperated by one white space
+now this is some more words but on a new line
+we should all be parse seperately if on different lines
+and together when on the same line

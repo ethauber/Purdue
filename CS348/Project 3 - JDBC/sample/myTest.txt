@@ -1,0 +1,5 @@
+LOGIN admin pass
+LOGIN admin pass
+QUIT
+LOGIN admin pass
+LOGIN admin pass
