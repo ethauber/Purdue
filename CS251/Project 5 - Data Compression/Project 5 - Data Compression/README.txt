@@ -23,3 +23,5 @@ execution:
 		 java -classpath .:stdlib.jar BurrowsWheeler + < <file to decode>
 		compress(encode)
 		 java -classpath .:stdlib.jar BurrowsWheeler - < <file to encode>
+		 
+Check out CS25100_Project5(1).pdf for detailed information about this project.
