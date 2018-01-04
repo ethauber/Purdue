@@ -1,0 +1,25 @@
+total 1352
+drwxr-s--- 4 ehauber ehauber    4096 Jul  5 17:38 .
+drwxr-s--- 9 ehauber ehauber    4096 Jul  4 18:12 ..
+drwxr-s--- 7 ehauber ehauber    4096 Jul  5 17:18 .git
+-rw-r----- 1 ehauber ehauber 1025167 Jul  5 17:18 .local.git.out
+-rwxr-x--- 1 ehauber ehauber     799 Jul  5 16:56 Makefile
+-rw-r----- 1 ehauber ehauber       0 Jul  5 17:38 al
+-rwxr-x--- 1 ehauber ehauber   20816 Jul  5 17:18 cat_grep
+-rwxr-x--- 1 ehauber ehauber    2927 Jul  5 16:56 cat_grep.cc
+-rwxr-x--- 1 ehauber ehauber    3637 Jul  5 16:56 command.cc
+-rwxr-x--- 1 ehauber ehauber     723 Jul  5 16:56 command.h
+-rw-r----- 1 ehauber ehauber   24352 Jul  5 17:18 command.o
+-rwxr-x--- 1 ehauber ehauber   12480 Jul  5 17:18 ctrl-c
+-rwxr-x--- 1 ehauber ehauber     642 Jul  5 16:56 ctrl-c.cc
+-rw-r----- 1 ehauber ehauber   44409 Jul  5 17:18 lex.yy.c
+-rw-r----- 1 ehauber ehauber   43152 Jul  5 17:18 lex.yy.o
+-rwxr-x--- 1 ehauber ehauber   15736 Jul  5 17:18 regular
+-rwxr-x--- 1 ehauber ehauber    1747 Jul  5 16:56 regular.cc
+-rwxr-x--- 1 ehauber ehauber   55840 Jul  5 17:18 shell
+-rwxr-x--- 1 ehauber ehauber     476 Jul  5 16:56 shell.l
+-rwxr-x--- 1 ehauber ehauber    1529 Jul  5 16:56 shell.y
+drwxr-s--- 3 ehauber ehauber    4096 Jul  5 16:56 test-shell
+-rw-r----- 1 ehauber ehauber   45276 Jul  5 17:18 y.tab.c
+-rw-r----- 1 ehauber ehauber    2317 Jul  5 17:18 y.tab.h
+-rw-r----- 1 ehauber ehauber   17328 Jul  5 17:18 y.tab.o

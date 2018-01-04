@@ -1,0 +1,6 @@
+-rwxr-x--- 1 ehauber ehauber   63384 Jul 13 16:44 shell
+-rw-r----- 1 ehauber ehauber       6 Jul 13 16:15 shell-in
+-rwxr-x--- 1 ehauber ehauber     672 Jul  6 12:31 shell.l
+-rwxr-x--- 1 ehauber ehauber    5050 Jul 13 16:44 shell.y
+-rw-r----- 1 ehauber ehauber       0 Jul 16 17:47 shellOut
+drwxr-s--- 3 ehauber ehauber    4096 Jul 13 16:51 test-shell

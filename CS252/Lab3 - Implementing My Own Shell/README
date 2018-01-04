@@ -1,0 +1,36 @@
+Features that work:
+Arrows
+(ctrl-D) Delete end and middle
+(ctrl-H) Backspace end and middle
+Insert in middle
+(ctrl-A) or Home
+(crrl-E) or End
+File redirection
+Pipes
+Ctrl-C
+Exit
+printenv
+setenv A B
+unsetenv A
+cd A
+Wildcarding
+Zombie Elimination
+Quotes
+Escaping
+Environment variable expansion
+Tilde expansion
+isatty()
+Edit mode (most features)
+Subshells
+Variable prompt
+
+Features that do not work:
+Jobs
+Source
+History
+${$}
+${?}
+${!}
+
+Extra Features:
+ExitNoPrint
