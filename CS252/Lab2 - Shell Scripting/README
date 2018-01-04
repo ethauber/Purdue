@@ -1,0 +1,5 @@
+name: Elijah Hauber
+login: ehauber
+explanation:
+    Part 1 (pwcheck.sh) will take in the password from a file using the cat commandand then using a series of if statements adding/subtracting points after getting the intial points from the length of the password using the length operator in shell script.
+    Part 2 (backup.sh) consists of backing up a file using 4 arguments from the command line. The first argument is the file to be backed up. The second is the backup directory. The third is the interval that the program will check to see whether the original file was modified. The fourth is the maximum number of backups will be backed up to the backup directory. This backup task is accomplished by using a while loop that uses check and then sleeps for the interval. The first check is to see whether the number of backups since this program was run is at the maximum number of backups specified. When it is the program will delete the oldest file using a circular array of stored filenames created by the program. When there is a difference to backup the program will create the backup in the backup directory and sending a simple email of the difference.
