@@ -16,3 +16,7 @@ To compile WordNet:
 javac -classpath .:stdlib.jar WordNet.java
 To execute WordNet:
 java -classpath .:stdlib.jar WordNet <NAMEFORSYNSETSFILE>.txt <HYPERNYMSFILE>.txt <WORDPAIRSFILE>.input
+
+Detailed information about the project is in CS25100_Project4.pdf
+
+My findings when doing this project is in Elijah Hauber -project 4 report.pdf
