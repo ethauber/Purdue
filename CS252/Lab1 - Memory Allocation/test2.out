@@ -1,0 +1,12 @@
+
+---- Running test2 ---
+FreeList: [offset:2097152,size:1785376]->[offset:0,size:56]->
+
+-------------------
+HeapSize:	4194304 bytes
+# mallocs:	10003
+# reallocs:	0
+# callocs:	0
+# frees:	0
+
+-------------------
