@@ -1,0 +1,20 @@
+Task 4
+	$ date +"%T"; cat /home/data/1996_noheader.csv | awk -F',' '$2 == "8"
+	{print $1}' | wc -l; date +"%T"
+		00:52:49
+		5814277
+		00:52:53
+
+	hive> select count(*) from flights where month = 8 and year = 1996s;
+		Stage-Stage-1: Map: 4  Reduce: 1   Cumulative CPU: 18.14 sec   HDFS Read: 534150017 HDFS Write: 7 SUCCESS
+		Total MapReduce CPU Time Spent: 18 seconds 140 msec
+		Time taken: 30.081 seconds, Fetched: 1 row(s)
+		462294
+			Cumulative CPU : 18.14 sec
+			HDFS Read : 534150017
+			HDFS Write : 7
+			Time Taken : 30.081 sec
+	
+	Question
+		 How does the runtime compare to our local job?
+		 The runtime is signifcantly longer in hive when compared to the cluster.

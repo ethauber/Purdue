@@ -1,0 +1,164 @@
+Project 4 - CS348
+Elijah Hauber, ehauber@purdue.edu
+
+Task 1
+	Query 1
+	hive> select count(*) from flights where month = 3;
+	Stage-Stage-1: Map: 4  Reduce: 1   Cumulative CPU: 19.19 sec   HDFS Read: 534149367 HDFS Write: 7 SUCCESS
+	Total MapReduce CPU Time Spent: 19 seconds 190 msec
+	Time taken: 29.249 seconds, Fetched: 1 row(s)
+		Cumulative CPU : 19.19 sec
+		HDFS Read : 534149367
+		HDFS Write : 7
+		Time Taken : 29.249 sec
+
+	Query 2
+	hive> select count(*) from flights where month = 6 and dayofmonth = 12;
+	Stage-Stage-1: Map: 4  Reduce: 1   Cumulative CPU: 17.7 sec   HDFS Read: 534150334 HDFS Write: 6 SUCCESS
+	Total MapReduce CPU Time Spent: 17 seconds 700 msec
+	Time taken: 26.543 seconds, Fetched: 1 row(s)
+		Cumulative CPU : 17.7 sec
+		HDFS Read : 534150334
+		HDFS Write : 6
+		Time Taken : 26.543 sec
+
+	Query 3
+	hive> select count(*) from flights where month = 8 and dayofmonth > 10 and dayofmonth < 20;
+	Stage-Stage-1: Map: 4  Reduce: 1   Cumulative CPU: 18.63 sec   HDFS Read: 534151334 HDFS Write: 7 SUCCESS
+	Total MapReduce CPU Time Spent: 18 seconds 630 msec
+	OK
+	134586
+	Time taken: 26.392 seconds, Fetched: 1 row(s)
+		Cumulative CPU : 18.63 sec
+		HDFS Read : 534151334
+		HDFS Write : 7
+		Time Taken : 26.392 sec
+
+Task 2
+	Query 1
+	hive> select count(*) from flights_partitioned_month where month = 3;
+	Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 4.18 sec   HDFS Read: 42258329 HDFS Write: 7 SUCCESS
+	Total MapReduce CPU Time Spent: 4 seconds 180 msec
+	Time taken: 25.275 seconds, Fetched: 1 row(s)
+		Cumulative CPU : 4.18 sec
+		HDFS Read : 42258329
+		HDFS Write : 7
+		Time Taken : 25.275 sec
+
+	Query 2
+	hive> select count(*) from flights_partitioned_month where month = 6 and dayofmonth = 12;
+	Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.36 sec   HDFS Read: 41646591 HDFS Write: 6 SUCCESS
+	Total MapReduce CPU Time Spent: 5 seconds 360 msec
+	Time taken: 23.824 seconds, Fetched: 1 row(s)
+		Cumulative CPU : 5.36 sec
+		HDFS Read : 41646591
+		HDFS Write : 6
+		Time Taken : 23.824 sec
+
+	Query 3
+	hive> select count(*) from flights_partitioned_month where month = 8 and dayofmonth > 10 and dayofmonth < 20;
+	Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.03 sec   HDFS Read: 43445085 HDFS Write: 7 SUCCESS
+	Total MapReduce CPU Time Spent: 5 seconds 30 msec
+	Time taken: 25.0 seconds, Fetched: 1 row(s)
+		Cumulative CPU : 5.03 sec
+		HDFS Read : 43445085
+		HDFS Write : 7
+		Time Taken : 25.0 sec
+
+	Questions
+		Why do we not need a reduce operator?
+		We do not need a reduce operator because our reduce operator is now the partition.
+		
+		What do you observe for cumulative CPU time compared to our queries on the unpartitioned data?
+		The cumulative CPU time compared to our queries on the unpartitioned data is better/smaller.
+		
+		What do you observe for the wall clock time ("Time taken")? Why do you think this is?
+		The time taken is about the same as the unpartitioned results because the amount of HDFS read did not change signifcantly.
+	
+Task 3
+	dayOfMonth partition :
+		Query 1
+		hive> select count(*) from flights_partitioned_dayOfMonth where month = 3;
+		Stage-Stage-1: Map: 7  Reduce: 1   Cumulative CPU: 29.72 sec   HDFS Read: 500005448 HDFS Write: 7 SUCCESS
+		Total MapReduce CPU Time Spent: 29 seconds 720 msec
+		OK
+		449569
+		Time taken: 27.273 seconds, Fetched: 1 row(s)
+			Cumulative CPU : 29.72 sec
+			HDFS Read : 500005448
+			HDFS Write : 7
+			Time Taken : 27.273 sec
+		
+		Query 2
+		hive> select count(*) from flights_partitioned_dayOfMonth where month = 6 and dayofmonth = 12;
+		Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 4.65 sec   HDFS Read: 16610101 HDFS Write: 6 SUCCESS
+		Total MapReduce CPU Time Spent: 4 seconds 650 msec
+		OK
+		15069
+		Time taken: 24.166 seconds, Fetched: 1 row(s)
+			Cumulative CPU : 4.65 sec
+			HDFS Read : 16610101
+			HDFS Write : 6
+			Time Taken : 24.166 sec
+		
+		Query 3
+		hive> select count(*) from flights_partitioned_dayOfMonth where month = 8 and dayofmonth > 10 and dayofmonth < 20;
+		Stage-Stage-1: Map: 5  Reduce: 1   Cumulative CPU: 17.78 sec   HDFS Read: 148361285 HDFS Write: 7 SUCCESS
+		Total MapReduce CPU Time Spent: 17 seconds 780 msec
+		Time taken: 24.184 seconds, Fetched: 1 row(s)
+			Cumulative CPU : 17.78 sec
+			HDFS Read : 148361285
+			HDFS Write : 7
+			Time Taken : 24.184 sec
+	
+	twoCol partition (month first, and dayOfMonth second) :
+		Query 1
+		hive> select count(*) from flights_partitioned_twoCol where month = 3;
+		Stage-Stage-1: Map: 7  Reduce: 1   Cumulative CPU: 16.75 sec   HDFS Read: 41151007 HDFS Write: 7 SUCCESS
+		Total MapReduce CPU Time Spent: 16 seconds 750 msec
+		Time taken: 24.741 seconds, Fetched: 1 row(s)
+			Cumulative CPU : 16.75 sec
+			HDFS Read : 41151007
+			HDFS Write : 7
+			Time Taken : 24.741 sec
+		
+		Query 2
+		hive> select count(*) from flights_partitioned_twoCol where month = 6 and dayofmonth = 12;
+		Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 4.02 sec   HDFS Read: 1385528 HDFS Write: 6 SUCCESS
+		Total MapReduce CPU Time Spent: 4 seconds 20 msec
+		Time taken: 23.89 seconds, Fetched: 1 row(s)
+			Cumulative CPU : 4.02 sec
+			HDFS Read : 1385528
+			HDFS Write : 6
+			Time Taken : 23.89 sec
+		
+		Query 3
+		hive> select count(*) from flights_partitioned_twoCol where month = 8 and dayofmonth > 10 and dayofmonth < 20;
+		Stage-Stage-1: Map: 4  Reduce: 1   Cumulative CPU: 10.16 sec   HDFS Read: 12320884 HDFS Write: 7 SUCCESS
+		Total MapReduce CPU Time Spent: 10 seconds 160 msec
+		Time taken: 24.408 seconds, Fetched: 1 row(s)
+			Cumulative CPU : 10.16 sec
+			HDFS Read : 12320884
+			HDFS Write : 7
+			Time Taken : 24.408 sec
+
+Task 4
+	$ date +"%T"; cat /home/data/1996_noheader.csv | awk -F',' '$2 == "8"
+	{print $1}' | wc -l; date +"%T"
+		00:52:49
+		5814277
+		00:52:53
+
+	hive> select count(*) from flights where month = 8 and year = 1996s;
+		Stage-Stage-1: Map: 4  Reduce: 1   Cumulative CPU: 18.14 sec   HDFS Read: 534150017 HDFS Write: 7 SUCCESS
+		Total MapReduce CPU Time Spent: 18 seconds 140 msec
+		Time taken: 30.081 seconds, Fetched: 1 row(s)
+		462294
+			Cumulative CPU : 18.14 sec
+			HDFS Read : 534150017
+			HDFS Write : 7
+			Time Taken : 30.081 sec
+	
+	Question
+		 How does the runtime compare to our local job?
+		 The runtime is signifcantly longer in hive when compared to the cluster.
